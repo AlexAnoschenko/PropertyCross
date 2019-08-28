@@ -8,7 +8,7 @@ module.exports = {
             legacyDecorators: true,
         },
     },
-    plugins: ['react', 'import', 'jest', 'mocha', 'webdriverio', 'tinkoff'],
+    plugins: ['react', 'import'],
     env: {
         browser: true,
         node: true,
@@ -25,7 +25,6 @@ module.exports = {
         },
     },
     globals: {
-        jasmine: true, // TODO заменить все вызовы jasmine.* на аналоги из jest
         jsdom_locationAssignParams: true, // TODO перенести в плагин
         jsdom_locationAssignHref: true,
         react_disableWarnings: true,
