@@ -12,9 +12,6 @@ module.exports = {
     env: {
         browser: true,
         node: true,
-        mocha: true,
-        'webdriverio/wdio': true,
-        'jest/globals': true,
     },
     settings: {
         'import/parser': 'babel-eslint',
@@ -81,7 +78,6 @@ module.exports = {
             },
         ],
         'no-console': 2,
-        camelcase: 1,
         'func-style': [
             2,
             'declaration',
@@ -177,13 +173,6 @@ module.exports = {
                 ignoreStateless: true,
             },
         ],
-        'react/jsx-handler-names': [
-            1,
-            {
-                eventHandlerPrefix: 'handle',
-                eventHandlerPropPrefix: 'on',
-            },
-        ],
         'react/no-unused-state': 1,
         'react/button-has-type': 1,
         'react/no-unused-prop-types': 1,
@@ -240,7 +229,6 @@ module.exports = {
         'import/order': 0, // ломает код :/
         'import/prefer-default-export': 1,
         'import/newline-after-import': 0, // включить, как починят баг
-        'import/unambiguous': 1,
         'import/no-webpack-loader-syntax': 1,
         'import/extensions': [
             1,
@@ -256,10 +244,6 @@ module.exports = {
         'import/no-dynamic-require': 1,
         'import/no-deprecated': 1,
         'import/no-extraneous-dependencies': 0, // нужно настроить для нас
-        'jest/no-disabled-tests': 'warn',
-        'jest/no-focused-tests': 'error',
-        'jest/no-identical-title': 'error',
-        'jest/valid-expect': 'error',
         'no-empty': [
             'error',
             {
