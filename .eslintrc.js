@@ -8,7 +8,7 @@ module.exports = {
             legacyDecorators: true,
         },
     },
-    plugins: ['react', 'import'],
+    plugins: ['react', 'jsx-a11y', 'import'],
     env: {
         browser: true,
         node: true,
@@ -230,16 +230,6 @@ module.exports = {
         'import/prefer-default-export': 1,
         'import/newline-after-import': 0, // включить, как починят баг
         'import/no-webpack-loader-syntax': 1,
-        'import/extensions': [
-            1,
-            'always',
-            {
-                js: 'never',
-                jsx: 'never',
-                ts: 'never',
-                tsx: 'never',
-            },
-        ],
         'import/first': 1,
         'import/no-dynamic-require': 1,
         'import/no-deprecated': 1,
