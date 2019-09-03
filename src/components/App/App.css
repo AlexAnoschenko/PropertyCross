@@ -1,4 +1,4 @@
-h1 {
-    color: #2e00fa;
-    text-align: center;
+body {
+    margin: 0; /* Убрать App.css после подключения reset.css */
+    padding: 0;
 }

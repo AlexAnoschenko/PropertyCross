@@ -1,0 +1,8 @@
+.nav-block {
+    background: gray;
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
+}
