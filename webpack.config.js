@@ -7,6 +7,9 @@ module.exports = {
         path: path.join(__dirname, '/dist'),
         filename: 'index-bundle.js',
     },
+    devServer: {
+        historyApiFallback: true,
+    },
     module: {
         rules: [
             {
@@ -17,7 +20,7 @@ module.exports = {
                 },
             },
             {
-                test: /\.module\.css$/i,
+                test: /\.css$/i,
                 use: [
                     'style-loader',
                     {
