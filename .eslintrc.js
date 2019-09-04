@@ -144,6 +144,7 @@ module.exports = {
                 ignorePureComponents: true,
             },
         ],
+        'react/state-in-constructor': [1, 'never'],
         'react/no-this-in-sfc': 0, // Матчится на наши миксины
         'react/default-props-match-prop-types': 1,
         'react/no-direct-mutation-state': 2,
@@ -173,7 +174,6 @@ module.exports = {
                 ignoreStateless: true,
             },
         ],
-        'react/no-unused-state': 1,
         'react/button-has-type': 1,
         'react/no-unused-prop-types': 1,
         'react/no-deprecated': 1, // Много error, позже нужно будет включить до error
