@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Counter from '../Counter/Counter';
 import Navigator from '../Navigator/Navigator';
+import 'reset-css';
 
 function App() {
     return (
