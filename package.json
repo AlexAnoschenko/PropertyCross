@@ -60,13 +60,6 @@
     "webpack-cli": "^3.3.7",
     "webpack-dev-server": "^3.8.0"
   },
-  "lint-stages": {
-    "*.{js, jsx}": [
-      "node_modules/.bin/eslint",
-      "prettier --write",
-      "git add"
-    ]
-  },
   "dependencies": {
     "babel-preset-react": "^6.24.1",
     "classnames": "^2.2.6",
