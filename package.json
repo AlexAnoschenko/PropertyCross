@@ -52,12 +52,20 @@
     "postcss": "^7.0.17",
     "postcss-loader": "^3.0.0",
     "postcss-modules": "^1.4.1",
+    "pre-commit": "^1.2.2",
     "precss": "^4.0.0",
     "prettier": "1.18.2",
     "style-loader": "^1.0.0",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.7",
     "webpack-dev-server": "^3.8.0"
+  },
+  "lint-stages": {
+    "*.{js, jsx}": [
+      "node_modules/.bin/eslint",
+      "prettier --write",
+      "git add"
+    ]
   },
   "dependencies": {
     "babel-preset-react": "^6.24.1",
