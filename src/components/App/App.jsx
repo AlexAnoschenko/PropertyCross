@@ -1,13 +1,13 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Counter from '../Counter/Counter';
-import Navigator from '../Navigator/Navigator';
+import NavigationMenu from '../NavigationMenu/NavigationMenu';
 import 'reset-css';
 
 function App() {
     return (
         <div>
-            <Navigator />
+            <NavigationMenu />
             <Switch>
                 <Route exact path="/" component={Counter} />
                 <Route path="/page2" render={() => <p>Hello! Page 2</p>} />

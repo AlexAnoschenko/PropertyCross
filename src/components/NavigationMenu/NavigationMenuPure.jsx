@@ -1,44 +1,36 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import cx from 'classnames';
-import styles from './Navigator.css';
+import pt from 'prop-types';
+import styles from './NavigationMenu.css';
 
-export default class Navigator extends PureComponent {
-    state = {
-        activeLink: null,
-    };
-
-    handleLinkClick = (activeLink) => {
-        this.setState({ activeLink });
-    };
-
+export default class NavigationMenuPure extends PureComponent {
     render() {
+        const { pathname } = this.props;
+
         return (
             <div className={styles.navBlock}>
                 <Link
                     to="/"
                     className={cx(styles.linkStyle, {
-                        [styles.activeLink]: this.state.activeLink === 'pageOne',
+                        [styles.activeLink]: pathname === '/',
                     })}
-                    onClick={() => this.handleLinkClick('pageOne')}
                 >
                     Counter
                 </Link>
                 <Link
                     to="/page2"
                     className={cx(styles.linkStyle, {
-                        [styles.activeLink]: this.state.activeLink === 'pageTwo',
+                        [styles.activeLink]: pathname === '/page2',
                     })}
-                    onClick={() => this.handleLinkClick('pageTwo')}
                 >
                     Page 2
                 </Link>
                 <Link
                     to="/page3"
                     className={cx(styles.linkStyle, {
-                        [styles.activeLink]: this.state.activeLink === 'pageThree',
+                        [styles.activeLink]: pathname === '/page3',
                     })}
-                    onClick={() => this.handleLinkClick('pageThree')}
                 >
                     Page 3
                 </Link>
@@ -46,3 +38,7 @@ export default class Navigator extends PureComponent {
         );
     }
 }
+
+NavigationMenuPure.propTypes = {
+    pathname: pt.string,
+};
