@@ -1,17 +1,10 @@
-export const initialState = {
-    user: 'Alex',
-    num: 1,
-};
+import { combineReducers } from 'redux';
+import apartments from './apartments';
+import recentList from './recentList';
 
-export function rootReducer(state = initialState, action) {
-    switch (action.type) {
-        case 'PLUS_ONE':
-            return {
-                ...state,
-                num: state.num + 1,
-            };
+const rootReducer = combineReducers({
+    apartments,
+    recentList,
+});
 
-        default:
-            return state;
-    }
-}
+export default rootReducer;
