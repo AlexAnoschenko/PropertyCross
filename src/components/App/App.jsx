@@ -1,17 +1,13 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Counter from '../Counter/Counter';
-import NavigationMenu from '../NavigationMenu/NavigationMenu';
+import { Route, Switch } from 'react-router-dom';
 import 'reset-css';
+import SearchPage from '../SearchPage/SearchPage';
 
 function App() {
     return (
         <div>
-            <NavigationMenu />
             <Switch>
-                <Route exact path="/" component={Counter} />
-                <Route path="/page2" render={() => <p>Hello! Page 2</p>} />
-                <Route path="/page3" render={() => <p>Page 3</p>} />
+                <Route exact path="/" component={SearchPage} />
             </Switch>
         </div>
     );

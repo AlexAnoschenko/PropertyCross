@@ -1,0 +1,9 @@
+.overviewContainer {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.favoriteButton {
+    margin-left: 10px;
+}
