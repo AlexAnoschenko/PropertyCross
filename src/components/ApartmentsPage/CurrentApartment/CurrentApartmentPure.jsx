@@ -16,7 +16,10 @@ export default class CurrentApartmentPure extends PureComponent {
     }
 
     addToFavotites = () => {
-        this.props.addApartmentToFavorites(this.props.currentApartment);
+        this.props.addApartmentToFavorites({
+            ...this.props.currentApartment,
+            city: this.props.match.params.city,
+        });
     };
 
     render() {

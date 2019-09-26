@@ -6,10 +6,10 @@ import getId from '../../../utils/getId';
 
 export default class Apartment extends PureComponent {
     render() {
-        const { img_url: imgUrl, price_formatted: priceFormatted, title, latitude } = this.props.apartment;
+        const { img_url: imgUrl, price_formatted: priceFormatted, title, latitude, city } = this.props.apartment;
 
         return (
-            <Link to={`/results/${this.props.city}/${getId(latitude)}`}>
+            <Link to={`/results/${this.props.city ? this.props.city : city}/${getId(latitude)}`}>
                 <div className={styles.container}>
                     <img src={imgUrl} alt="" className={styles.image} />
                     <div className={styles.infoContainer}>
