@@ -1,5 +1,3 @@
-import { requestsRecentKey } from '../../constants/recentRequest';
-
-export default function setLocalStorage(recent) {
-    return Promise.resolve(localStorage.setItem(requestsRecentKey, recent));
+export default function setLocalStorage(key, payload) {
+    return Promise.resolve(localStorage.setItem(key, JSON.stringify(payload)));
 }

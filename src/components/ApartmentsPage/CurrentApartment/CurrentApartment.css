@@ -1,0 +1,10 @@
+.container {
+    margin: 0 auto;
+    margin-top: 5px;
+    width: 30%;
+    border: solid 1px black;
+}
+
+.addToFavBtn {
+    float: right;
+}

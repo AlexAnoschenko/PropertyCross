@@ -7,7 +7,11 @@ export default class InfiniteScroll extends PureComponent {
         window.addEventListener('scroll', this.onScrollDown);
     }
 
-    onScrollDown = throttle(1000, () => {
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.onScrollDown);
+    }
+
+    onScrollDown = throttle(3000, () => {
         const windowRelativeBottom = document.documentElement.getBoundingClientRect().bottom;
 
         if (windowRelativeBottom < document.documentElement.clientHeight + 100) {

@@ -35,7 +35,13 @@ export default class ApartmentsPagePure extends PureComponent {
             <InfiniteScroll updateData={this.updateData}>
                 <div className={styles.container}>
                     {apartments.map((apartment) => {
-                        return <Apartment apartment={apartment} key={apartment.lister_url} />;
+                        return (
+                            <Apartment
+                                apartment={apartment}
+                                key={apartment.lister_url}
+                                city={this.props.match.params.city}
+                            />
+                        );
                     })}
                 </div>
             </InfiniteScroll>
