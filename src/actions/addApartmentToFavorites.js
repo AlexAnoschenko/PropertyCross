@@ -3,8 +3,8 @@ import setLocalStorage from '../services/localStorage/setLocalStorageData';
 
 export default function addApartmentToFavorites(payload) {
     return (dispatch) => {
-        return getLocalStorageData('apartments').then((apartments) => {
-            setLocalStorage('apartments', [...apartments, payload]);
+        return getLocalStorageData('favorites').then((apartments) => {
+            setLocalStorage('favorites', [...apartments, payload]);
             return dispatch({
                 type: 'ADD_APARTMENTS_TO_FAVORITES',
                 payload: [...apartments, payload],

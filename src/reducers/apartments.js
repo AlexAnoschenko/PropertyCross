@@ -1,4 +1,6 @@
-const initialState = {};
+const initialState = {
+    favorites: [],
+};
 
 export default function apartments(state = initialState, action) {
     switch (action.type) {
