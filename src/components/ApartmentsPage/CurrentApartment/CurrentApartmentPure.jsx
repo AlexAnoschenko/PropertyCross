@@ -29,21 +29,17 @@ export default class CurrentApartmentPure extends PureComponent {
             return <>...Loading</>;
         }
         return (
-            <>
-                {
-                    <div className={styles.container} key={currentApartment.img_url}>
-                        <button type="button" className={styles.addToFavBtn} onClick={this.addToFavotites}>
-                            Add
-                        </button>
-                        <p>{currentApartment.price}</p>
-                        <p>{currentApartment.title}</p>
-                        <img src={currentApartment.img_url} alt="" />
-                        <p>Bedrooms: {currentApartment.bedroom_number}</p>
-                        <p>Bathrooms: {currentApartment.bathroom_number}</p>
-                        <p>{currentApartment.summary}</p>
-                    </div>
-                }
-            </>
+            <div className={styles.container} key={currentApartment.img_url}>
+                <button type="button" className={styles.addToFavBtn} onClick={this.addToFavotites}>
+                    Add
+                </button>
+                <p>{currentApartment.price}</p>
+                <p>{currentApartment.title}</p>
+                <img src={currentApartment.img_url} alt="" />
+                <p>Bedrooms: {currentApartment.bedroom_number}</p>
+                <p>Bathrooms: {currentApartment.bathroom_number}</p>
+                <p>{currentApartment.summary}</p>
+            </div>
         );
     }
 }
