@@ -1,8 +1,20 @@
-import React, { PureComponent } from 'react';
-import styles from './ChooseLocationList.css';
+import { connect } from 'react-redux';
+import ChooseLocationListPure from './ChooseLocationListPure';
+import getLocationsList from '../../../actions/getLocationsList';
 
-export default class ChooseLocationList extends PureComponent {
-    render() {
-        return <p className={styles.locationListText}>Please select a location below:</p>;
-    }
-}
+const mapStateToProps = (store) => {
+    return {
+        locations: store.locations.locationsList,
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getLocationsList: () => dispatch(getLocationsList()),
+    };
+};
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(ChooseLocationListPure);
