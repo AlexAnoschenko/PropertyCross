@@ -17,11 +17,7 @@ const createUrlParams = (obj) => {
 };
 
 export default function getApartments({ payload }) {
-    return fetch(url + createUrlParams({ ...initialParams, ...payload }))
-        .then((responce) => {
-            return responce.json();
-        })
-        .then((listing) => {
-            return listing.response.listings;
-        });
+    return fetch(url + createUrlParams({ ...initialParams, ...payload })).then((responce) => {
+        return responce.json();
+    });
 }

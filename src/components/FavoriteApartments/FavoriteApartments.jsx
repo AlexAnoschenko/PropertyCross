@@ -5,6 +5,7 @@ import getFavoritesList from '../../actions/getFavoritesList';
 const mapStateToProps = (store) => {
     return {
         favorites: store.apartments.favorites,
+        locations: store.locations.locationsList,
     };
 };
 

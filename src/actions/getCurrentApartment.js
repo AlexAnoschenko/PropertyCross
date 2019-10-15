@@ -11,7 +11,7 @@ export default function getCurrentApartment(props) {
                 place_name: city,
             },
         }).then((data) => {
-            const apartment = data.find((apart) => getId(apart.latitude) === id);
+            const apartment = data.response.listings.find((apart) => getId(apart.latitude) === id);
 
             if (!apartment) {
                 return dispatch(getCurrentApartment({ id, city, page: page + 1 }));
