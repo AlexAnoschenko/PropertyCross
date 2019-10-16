@@ -7,6 +7,7 @@ import RecentSearchList from './RecentSearchList/RecentSearchList';
 import ErrorRequest from './ErrorRequest/ErrorRequest';
 import ChooseLocationList from './ChooseLocationList/ChooseLocationList';
 import { requestsRecentKey } from '../../constants/recentRequest';
+import Wrapper from '../Wrapper/Wrapper';
 
 export default class SearchPagePure extends PureComponent {
     state = {
@@ -34,10 +35,15 @@ export default class SearchPagePure extends PureComponent {
                     redirect: true,
                     city: payload.city,
                 });
-                this.props.updateRecentSearch(requestsRecentKey, [...this.props.recentRequests, payload.city]);
+                this.props.updateRecentSearch(requestsRecentKey, [payload.city, ...this.props.recentRequests]);
             })
             .catch((error) => {
-                this.onSubmitError(error.message);
+                if (error.message === 'Failed to fetch') {
+                    return this.onSubmitError(
+                        'An error occurred while searching. Please check your network connection and try again.'
+                    );
+                }
+                return this.onSubmitError(error.message);
             });
     };
 
@@ -48,13 +54,22 @@ export default class SearchPagePure extends PureComponent {
             return <Redirect to={`/results/${city}`} />;
         }
         return (
-            <>
+            <Wrapper>
                 <Overview />
-                <InputAdressPure handleSubmit={this.handleSubmit} onLocationButtonClick={this.onLocationButtonClick} />
-                {searchPageStatus === 'recentSearchList' ? <RecentSearchList /> : null}
+                <InputAdressPure
+                    handleSubmit={this.handleSubmit}
+                    onLocationButtonClick={this.onLocationButtonClick}
+                    onSubmitError={this.onSubmitError}
+                />
+                {searchPageStatus === 'recentSearchList' ? (
+                    <RecentSearchList
+                        getApartmentsList={this.props.getApartmentsList}
+                        onSubmitError={this.onSubmitError}
+                    />
+                ) : null}
                 {searchPageStatus === 'errorRequest' ? <ErrorRequest error={error} /> : null}
                 {searchPageStatus === 'chooseLocationList' ? <ChooseLocationList /> : null}
-            </>
+            </Wrapper>
         );
     }
 }

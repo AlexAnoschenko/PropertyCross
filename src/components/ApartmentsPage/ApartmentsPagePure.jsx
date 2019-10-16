@@ -28,8 +28,11 @@ export default class ApartmentsPagePure extends PureComponent {
     render() {
         const { apartments } = this.props;
 
-        if (!this.props.apartments) {
+        if (!apartments) {
             return <>...Loading</>;
+        }
+        if (apartments.length === 0) {
+            return <>The location given was not recognised.</>;
         }
         return (
             <InfiniteScroll updateData={this.updateData}>

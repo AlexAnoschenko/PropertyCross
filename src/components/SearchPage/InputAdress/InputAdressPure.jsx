@@ -12,7 +12,13 @@ export default class InputAdressPure extends PureComponent {
     };
 
     onSubmit = () => {
-        return this.props.handleSubmit({ currentPage: 1, city: this.state.inputText });
+        const { onSubmitError, handleSubmit } = this.props;
+        const { inputText } = this.state;
+
+        if (inputText === '') {
+            return onSubmitError('There were no properties found for the given location (Empty string).');
+        }
+        return handleSubmit({ currentPage: 1, city: inputText });
     };
 
     hundleLocationStatus = () => {
@@ -21,14 +27,21 @@ export default class InputAdressPure extends PureComponent {
 
     render() {
         return (
-            <div className={styles.inputAdressContainer}>
-                <input type="text" placeholder="London" onChange={this.onChangeInputText} />
-                <button type="button" onClick={this.onSubmit}>
-                    Go
-                </button>
-                <button type="button" onClick={this.hundleLocationStatus}>
-                    My location
-                </button>
+            <div className={styles.container}>
+                <input
+                    className={styles.dataInput}
+                    type="text"
+                    placeholder="newcastle"
+                    onChange={this.onChangeInputText}
+                />
+                <div className={styles.containerBtn}>
+                    <button className={styles.button} type="button" onClick={this.onSubmit}>
+                        Go
+                    </button>
+                    <button className={styles.button} type="button" onClick={this.hundleLocationStatus}>
+                        My location
+                    </button>
+                </div>
             </div>
         );
     }
@@ -37,4 +50,5 @@ export default class InputAdressPure extends PureComponent {
 InputAdressPure.propTypes = {
     onLocationButtonClick: pt.func,
     handleSubmit: pt.func,
+    onSubmitError: pt.func,
 };
