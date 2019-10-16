@@ -17,7 +17,7 @@ export default function getCurrentApartment(props) {
                 return dispatch(getCurrentApartment({ id, city, page: page + 1 }));
             }
 
-            return dispatch({ type: 'GET_CURRENT_APARTMENT', payload: apartment });
+            return dispatch({ type: 'CURRENT_APARTMENT_LOADED', payload: apartment });
         });
     };
 }
