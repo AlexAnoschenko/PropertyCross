@@ -1,11 +1,9 @@
 .container {
-    width: 100%;
     display: flex;
     justify-content: center;
 }
 
 .errorText {
-    width: 100%;
     padding-top: 10px;
     text-align: center;
     font-family: 'Comic Sans MS', cursive, sans-serif;

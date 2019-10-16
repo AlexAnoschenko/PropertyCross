@@ -2,7 +2,7 @@
     margin-top: 5px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: flex-start;
 }
 
 .dataInput {
@@ -16,10 +16,6 @@
     &:focus {
         outline: none;
     }
-}
-
-.containerBtn {
-    width: 100%;
 }
 
 .button {

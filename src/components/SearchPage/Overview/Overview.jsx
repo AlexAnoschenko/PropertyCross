@@ -6,7 +6,7 @@ export default class Overview extends PureComponent {
     render() {
         return (
             <div className={styles.overviewContainer}>
-                <div className={styles.upperTextBtn}>
+                <div className={styles.upperTextButton}>
                     <p className={styles.title}>PropertyCross</p>
                     <Link to="/favorites">
                         <button type="button" className={styles.favoriteButton}>

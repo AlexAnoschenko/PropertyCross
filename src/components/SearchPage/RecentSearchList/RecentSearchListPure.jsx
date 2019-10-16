@@ -19,7 +19,6 @@ export default class RecentSearchListPure extends PureComponent {
         getApartmentsList({ currentPage: 1, city: item })
             .then(() => {
                 this.setState({
-                    redirect: true,
                     city: item,
                 });
             })
@@ -32,14 +31,14 @@ export default class RecentSearchListPure extends PureComponent {
 
     render() {
         const { recentRequests } = this.props;
-        const { redirect, city } = this.state;
+        const { city } = this.state;
 
-        if (redirect) {
+        if (city) {
             return <Redirect to={`/results/${city}`} />;
         }
         return (
             <div className={styles.container}>
-                <p className={styles.label}>Recent searches:</p>
+                <p>Recent searches:</p>
                 <div className={styles.recentList}>
                     {recentRequests.map((item, index) => {
                         return (
