@@ -6,7 +6,11 @@ export default class ErrorRequest extends PureComponent {
     render() {
         const { error } = this.props;
 
-        return <p className={styles.errorText}>{error}</p>;
+        return (
+            <div className={styles.container}>
+                <p className={styles.errorText}>{error}</p>
+            </div>
+        );
     }
 }
 
