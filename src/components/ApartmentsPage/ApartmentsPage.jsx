@@ -1,10 +1,12 @@
 import { connect } from 'react-redux';
 import ApartmentsPagePure from './ApartmentsPagePure';
 import getApartmentsList from '../../actions/getApartmentsList';
+import { getListings, getTotalResults } from '../../selectors/selectors';
 
 const mapStateToProps = (store) => {
     return {
-        apartments: store.apartments.listings,
+        apartments: getListings(store),
+        totalResults: getTotalResults(store),
     };
 };
 

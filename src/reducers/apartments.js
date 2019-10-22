@@ -1,19 +1,19 @@
-const initialState = {
-    favorites: [],
-};
+import pathOr from 'ramda/src/pathOr';
 
-export default function apartments(state = initialState, action) {
+export default function apartments(state = {}, action) {
     switch (action.type) {
-        case 'GET_APARTMENTS_SUCCESS':
-            if (state.listings) {
-                return { ...state, listings: [...state.listings, ...action.payload] };
-            }
-            return { ...state, listings: action.payload };
+        case 'APARTMENTS_UPDATE':
+            const { payload } = action;
 
-        case 'ADD_APARTMENTS_TO_FAVORITES':
-            return { ...state, favorites: action.payload };
+            return {
+                ...state,
+                appartments: {
+                    ...payload,
+                    list: [...pathOr([], ['appartments', 'list'], state), ...payload.listings],
+                },
+            };
 
-        case 'GET_CURRENT_APARTMENT':
+        case 'CURRENT_APARTMENT_LOADED':
             return { ...state, currentApartment: action.payload };
 
         default:

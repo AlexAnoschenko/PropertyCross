@@ -8,7 +8,10 @@ export default function getApartmentsList({ currentPage, city }) {
                 place_name: city,
             },
         }).then((payload) => {
-            return dispatch({ type: 'GET_APARTMENTS_SUCCESS', payload: payload.response.listings });
+            return dispatch({
+                type: 'APARTMENTS_UPDATE',
+                payload: payload.response,
+            });
         });
     };
 }
