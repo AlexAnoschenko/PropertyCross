@@ -1,4 +1,4 @@
-import pathOr from 'ramda/src/pathOr';
+import { pathOr } from 'ramda';
 
 export default function apartments(state = {}, action) {
     switch (action.type) {

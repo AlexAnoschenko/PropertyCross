@@ -1,4 +1,4 @@
-import path from 'ramda/src/path';
+import { path } from 'ramda'
 
 export const getListings = (store) => {
     return path(['appartments', 'list'], store.apartments);

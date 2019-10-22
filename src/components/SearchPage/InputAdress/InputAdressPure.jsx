@@ -8,9 +8,9 @@ export default class InputAdressPure extends PureComponent {
     };
 
     onChangeInputText = (event) => {
-        const rep = /[a-zA-Z]*/;
-
-        this.setState({ inputText: event.target.value.match(rep).toString() });
+        if (/^[A-Za-z]+$/.test(event.target.value)) {
+            this.setState({ inputText: event.target.value });
+        }
     };
 
     onSubmit = () => {
@@ -31,6 +31,7 @@ export default class InputAdressPure extends PureComponent {
         return (
             <div className={styles.container}>
                 <input
+                    value={this.state.inputText}
                     className={styles.dataInput}
                     type="text"
                     placeholder="newcastle"

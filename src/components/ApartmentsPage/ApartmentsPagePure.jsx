@@ -39,9 +39,9 @@ export default class ApartmentsPagePure extends PureComponent {
         return (
             <Wrapper>
                 <InfiniteScroll updateData={this.updateData}>
-                    <div className={styles.nivigation}>
+                    <div className={styles.navigation}>
                         <Link to="/">
-                            <button type="button" className={styles.backBtn}>
+                            <button type="button" className={styles.backButton}>
                                 <img
                                     src="https://image.flaticon.com/icons/svg/60/60573.svg"
                                     alt=""
