@@ -8,7 +8,7 @@ export default class InputAdressPure extends PureComponent {
     };
 
     onChangeInputText = (event) => {
-        if (/^[A-Za-z]+$/.test(event.target.value)) {
+        if (/^[A-Za-z]*$/.test(event.target.value)) {
             this.setState({ inputText: event.target.value });
         }
     };
